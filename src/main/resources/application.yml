@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/mybatis_one2many?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true #\u5F00\u542F\u9A7C\u5CF0\u547D\u540D\u6CD5
+  type-aliases-package: com.lee.mybatis_one2many.pojo
+  mapper-locations: classpath:mapper/*.xml
