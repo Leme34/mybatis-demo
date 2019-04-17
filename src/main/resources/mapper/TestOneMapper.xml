@@ -5,11 +5,12 @@
     <id column="one_id" property="id" jdbcType="INTEGER" />
     <result column="one_nickname" property="nickname" jdbcType="VARCHAR" />
     <!-- <collection>:  一对多查询的方式
+          select：Mapper全类名.需要调用的<select>的id
           property：此类中需要关联查询的属性名
-          column：sql查询返回的结果集中的字段名
+          column：查询结果的字段名，用作参数传递（赋值）给select指定的sql，若有多个参数用逗号分隔
           javaType：property的java类型
     -->
-    <collection property="testTwos" column="one_id" ofType="TestTwo" javaType="ArrayList">
+    <collection property="testTwos" ofType="com.lee.mybatis_one2many.pojo.TestTwo" javaType="ArrayList">
       <result property="id" column="two_id"/>
       <result property="nickname" column="two_nickname"/>
       <result property="oneId" column="one_id"/>

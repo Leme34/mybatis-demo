@@ -6,11 +6,12 @@
     <result column="two_nickname" property="nickname" jdbcType="VARCHAR" />
     <result column="one_id" property="oneId" jdbcType="INTEGER" />
       <!-- <association>:  一对一查询的方式
+            select：Mapper全类名.需要调用的<select>的id
             property：此类中需要关联查询的属性名
-            column：数据表的字段名
+            column：查询结果的字段名，用作参数传递给select指定的sql，若有多个参数用逗号分隔
             javaType：property的java类型
      -->
-      <association property="testOne" column="one_id" javaType="TestOne">
+      <association property="testOne" javaType="com.lee.mybatis_one2many.pojo.TestOne">
           <id property="id" column="one_id"/>
           <result property="nickname" column="one_nickname"/>
       </association>
